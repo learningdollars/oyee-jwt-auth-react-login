@@ -5,19 +5,19 @@ import { signUp } from "../../redux/actions/auth/Login";
 class Registration extends Component {
   state = {
     username: "",
-    password: "",
+    password: ""
   };
 
-  onChangeHandler = (event) => {
+  onChangeHandler = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
     const { username, password } = this.state;
     const data = {
       username,
-      password,
+      password
     };
     this.props.signUp(data);
   };

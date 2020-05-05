@@ -6,21 +6,21 @@ import { connect } from "react-redux";
 class Login extends Component {
   state = {
     username: "",
-    password: "",
+    password: ""
   };
-  onChangeHandler = (e) => {
+  onChangeHandler = e => {
     const { name, value } = e.target;
     this.setState({
-      [name]: value,
+      [name]: value
     });
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
     const { username, password } = this.state;
     const data = {
       username,
-      password,
+      password
     };
     this.props.signIn(data);
   };

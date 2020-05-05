@@ -8,11 +8,11 @@ import { notification } from "antd";
  *
  * @returns {void}
  */
-export const showSuccessNotification = (message) => {
+export const showSuccessNotification = message => {
   const data = {
     message: message,
     description: "Successful request",
-    duration: 5,
+    duration: 5
   };
   notification.success(data);
 };
@@ -25,11 +25,11 @@ export const showSuccessNotification = (message) => {
  *
  * @returns {void}
  */
-export const showErrorNotification = (message) => {
+export const showErrorNotification = message => {
   const data = {
     message: message,
     description: "Error occured, please check the error and try again",
-    duration: 8,
+    duration: 8
   };
   notification.error(data);
 };
