@@ -2,20 +2,20 @@ import history from "../../../containers/configs/history";
 import {
   baseURL,
   showErrorNotification,
-  showSuccessNotification,
+  showSuccessNotification
 } from "../../../helpers/index";
-export const signIn = (userInfo) => (dispatch) => {
+export const signIn = userInfo => dispatch => {
   console.log(userInfo);
   const url = `${baseURL}auth/login/`;
   fetch(url, {
     method: "POST",
     headers: {
-      "content-type": "application/json",
+      "content-type": "application/json"
     },
-    body: JSON.stringify(userInfo),
+    body: JSON.stringify(userInfo)
   })
-    .then((response) => response.json())
-    .then((data) => {
+    .then(response => response.json())
+    .then(data => {
       if (data.token) {
         showSuccessNotification("You have successfully LogedIn");
         localStorage.setItem("fm-token", data.token);
@@ -25,20 +25,20 @@ export const signIn = (userInfo) => (dispatch) => {
         showErrorNotification("Login Failed");
       }
     })
-    .catch((error) => {})
-    .finally((done) => {});
+    .catch(error => {})
+    .finally(done => {});
 };
-export const signUp = (userInfo) => (dispatch) => {
+export const signUp = userInfo => dispatch => {
   const url = `${baseURL}auth/register/`;
   fetch(url, {
     method: "POST",
     headers: {
-      "content-type": "application/json",
+      "content-type": "application/json"
     },
-    body: JSON.stringify(userInfo),
+    body: JSON.stringify(userInfo)
   })
-    .then((response) => response.json())
-    .then((data) => {
+    .then(response => response.json())
+    .then(data => {
       if (data.token) {
         showSuccessNotification("You have successfully registered");
         localStorage.setItem("fm-token", data.token);
@@ -47,6 +47,6 @@ export const signUp = (userInfo) => (dispatch) => {
         showErrorNotification("Registration failed");
       }
     })
-    .catch((error) => {})
-    .finally((done) => {});
+    .catch(error => {})
+    .finally(done => {});
 };

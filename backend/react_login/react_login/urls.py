@@ -27,7 +27,7 @@ from authentication.views import RegistrationAPI, LoginAPI, UserAPI
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ["url", "username", "email", "is_staff"]
+        fields = ["url", "username", "password", "is_staff"]
 
 
 # ViewSets define the view behavior.
@@ -48,7 +48,7 @@ urlpatterns = [
     url(r"^api/auth/", include("knox.urls")),
     url(r"^", include(router.urls)),
     url(r"^api-auth/", include("rest_framework.urls", namespace="home")),
-    url(r"^auth/register/$", RegistrationAPI.as_view()),
-    url(r"^auth/login/$", LoginAPI.as_view()),
+    url(r"^register/$", RegistrationAPI.as_view()),
+    url(r"^login/$", LoginAPI.as_view()),
     url(r"^auth/user/$", UserAPI.as_view()),
 ]

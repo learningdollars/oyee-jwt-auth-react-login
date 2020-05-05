@@ -8,10 +8,15 @@ const Register = ({ handleSubmit, onChangeHandler, username, password }) => {
         <div className="card overflow-hidden account-card mx-3">
           <div className="bg-primary p-4 text-white text-center position-relative">
             <h4 className="font-20 m-b-5">Register</h4>
-            <p className="text-white-50 mb-4">Get your account now.</p>
+            <p className="text-white-50 mb-4">
+              Get your account now.
+            </p>
           </div>
           <div className="account-card-content">
-            <form className="form-horizontal m-t-30">
+            <form
+              className="form-horizontal m-t-30"
+              action="https://localhost:3000/dashboard"
+            >
               <div className="form-group">
                 <label htmlFor="username">Username</label>
                 <input
@@ -47,6 +52,7 @@ const Register = ({ handleSubmit, onChangeHandler, username, password }) => {
                   </button>
                 </div>
               </div>
+              
             </form>
           </div>
         </div>
@@ -58,8 +64,8 @@ const Register = ({ handleSubmit, onChangeHandler, username, password }) => {
             </NavLink>
           </p>
           <p>
-            © 2020 | Crafted with <i className="mdi mdi-heart text-danger"></i>{" "}
-            by Oyee James
+            © 2020. Crafted with{" "}
+            <i className="mdi mdi-heart text-danger"></i> by Oyee James
           </p>
         </div>
       </div>
